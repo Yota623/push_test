@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Hello</title>
+    <link href="/css/list.css" rel="stylesheet"></link>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>TEST情報一覧</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>KEY</th>
+                <th>データ1</th>
+                <th>データ2</th>
+                <th>データ3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="test : ${testlist}" th:object="${test}">
+                <td class="center" th:text="*{key}"></td>
+                <td th:text="*{data1}"></td>
+                <td th:text="*{data2}"></td>
+                <td class="center" th:text="*{data3}"></td>
+            </tr>
+        </tbody>
+    </table>
+  </body>
+</html>
